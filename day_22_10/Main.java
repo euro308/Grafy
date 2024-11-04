@@ -33,7 +33,7 @@ public class Main {
         Graph graph = new Graph(list);
 
         List<Vertex> dfs = graph.dfsAlgorithm();
-        System.out.println("DSF navštívil vrcholy v následujícím pořadí:");
+        System.out.println("DFS navštívil vrcholy v následujícím pořadí:");
         for (Vertex vertex: dfs) {
             System.out.print(vertex.toString() + " ");
         }
