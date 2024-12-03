@@ -1,15 +1,14 @@
-package day_22_10;
-import java.util.ArrayList;
-import java.util.List;
+package grafy_a_hry;
+import java.util.*;
 
 public class Vertex {
     private final String name;
     private boolean wasVisited;
-    private final List<Vertex> neighbors;
+    private final Map<Vertex, Integer> neighbors;
 
     public Vertex(String name) {
         this.name = name;
-        this.neighbors = new ArrayList<>();
+        this.neighbors = new HashMap<>();
     }
 
     @Override
@@ -17,12 +16,16 @@ public class Vertex {
         return name;
     }
 
-    public void addNeighbor(Vertex neighbor) {
-        neighbors.add(neighbor);
+    public void addNeighbor(Vertex neighbor, int weight) {
+        neighbors.put(neighbor, weight);
     }
 
-    public List<Vertex> getNeighbors() {
+    public Map<Vertex, Integer> getNeighbors() {
         return neighbors;
+    }
+
+    public int getWeight(Vertex neighbor) {
+        return neighbors.get(neighbor);
     }
 
     public boolean wasVisitedCheck() {
